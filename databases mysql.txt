@@ -1,0 +1,39 @@
+ CREATE TABLE `customer_info` (
+  `name` varchar(50) NOT NULL,
+  `meterno` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `address` varchar(55) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `email` varchar(55) NOT NULL,
+  `phone` varchar(20) NOT NULL
+);
+
+ CREATE TABLE `bill` (
+  `month` varchar(20) NOT NULL,
+  `units` int NOT NULL,
+  `amount` int NOT NULL,
+  `meterno` int NOT NULL,
+   FOREIGN KEY(meterno) references customer_info(meterno)
+);
+
+create table login_info(
+usr_name varchar(50) primary key,
+name varchar(50),
+gender varchar(10),
+email varchar(50),
+address varchar(100),
+mobile varchar(14),
+passwd varchar(50));
+
+ CREATE TABLE `tax` (
+  `meter_location` varchar(20) DEFAULT NULL,
+  `meter_type` varchar(20) DEFAULT NULL,
+  `phase_code` int DEFAULT NULL,
+  `bill_type` varchar(30) DEFAULT NULL,
+  `month` int NOT NULL,
+  `meter_rent` int DEFAULT NULL,
+  `service_rent` int DEFAULT NULL,
+  `gst` int DEFAULT NULL,
+  `mcb_rent` int DEFAULT NULL,
+  `division_name` varchar(55) DEFAULT NULL
+);
